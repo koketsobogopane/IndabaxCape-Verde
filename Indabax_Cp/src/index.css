@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import 'tailwindcss';
+
+#root {
+    padding: 0 !important; 
+    margin: 0;
+}
 
 @theme {
   --font-bebas_neue: 'Bebas Neue', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
+
+
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-weight: 400;
   font-size: 2.26rem;
   font-style: normal;
-  line-height: calc(2.5 / 2.25)
+  line-height: calc(2.5 / 2.25);
 }
-
-
