@@ -7,7 +7,7 @@ function ButtonPrimary({buttonName, buttonColor, textColor, handlerFunction}) {
         color: textColor,
     }
   return (
-    <button onClick={handlerFunction} className='font-montserrat flex flex-row hover: bg-sky-50 justify-content-center items-center gap 12px px-4 py-1 border rounded-lg' style={customStyles} type='button'>
+    <button onClick={handlerFunction} className='font-montserrat flex flex-row hover:shadow-xl/25 transition  justify-content-center items-center gap 12px px-4 py-1  rounded-lg' style={customStyles} type='button'>
         {buttonName}
     </button>
   )

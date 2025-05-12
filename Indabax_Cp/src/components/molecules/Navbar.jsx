@@ -9,25 +9,28 @@ function Navbar() {
   };
 
   return (
-    <div className="fixed top-4 w-full z-10 flex justify-center-safe">
+    <div className="fixed top-4 w-full z-10 flex justify-center-safe ">
       <nav className=" py-4 w-[75%] bg-sky-100 rounded-lg drop-shadow-xl">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="font-bold text-lg">#IndabAx</div>
           <ul className="hidden md:flex space-x-6">
             <li>
-              <Link to="/" className="hover:text-shadow-amber-200 text-sm">
+              <Link to="/" className="hover:text-sky-700 transition text-sm">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-shadow-amber-200 text-sm">
+              <Link
+                to="/about"
+                className="hover:text-sky-700 transition text-sm"
+              >
                 FAQ
               </Link>
             </li>
             <li>
               <Link
                 to="/services"
-                className="hover:text-shadow-amber-200 text-sm"
+                className="hover:text-sky-700 transition text-sm"
               >
                 Participate
               </Link>
@@ -35,7 +38,7 @@ function Navbar() {
             <li>
               <Link
                 to="/contact"
-                className="hover:text-shadow-amber-200 text-sm"
+                className="hover:text-sky-700 transition text-sm"
               >
                 Program
               </Link>
@@ -44,7 +47,7 @@ function Navbar() {
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="focus:outline-none text-black"
+              className="focus:outline-none text-black  cursor-pointer"
               type="button"
             >
               <i className="bi bi-list-nested" />
@@ -53,7 +56,11 @@ function Navbar() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="bg-gray-700 py-2 md:hidden">
+          <div className={`bg-sky-100 py-2 md:hidden transform transition-transform ${isMobileMenuOpen? "opacity-100" : "opacity-0"}`}
+          style={{
+            transition: "transform 0.3s ease, opacity 0.3s ease"
+          }}
+          >
             <ul className="px-4 py-2 space-y-2">
               <li>
                 <Link to="/" className="block hover:text-gray-300">
