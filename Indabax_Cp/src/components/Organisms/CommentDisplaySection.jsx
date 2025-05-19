@@ -1,5 +1,5 @@
 import React from "react";
-import CommentCard from "../molecules/commentCard";
+import CommentCard from "../molecules/CommentCard";
 
 const CommentDisplaySection = ({ title, description, comments }) => {
     const backgroundStyle = {
