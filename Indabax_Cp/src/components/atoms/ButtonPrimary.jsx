@@ -1,16 +1,41 @@
 import React from 'react'
+import { Link } from 'react-router'
 
-function ButtonPrimary({buttonName, buttonColor, textColor, handlerFunction}) {
+function ButtonPrimary({className,
+        children,
+        href,...props}) {
 
-    const customStyles = {
-        backgroundColor: buttonColor ?  buttonColor : "red", 
-        color: textColor,
-    }
-  return (
-    <button onClick={handlerFunction} className='font-montserrat flex flex-row hover:shadow-xl/25 transition  justify-content-center items-center gap 12px px-4 py-1  rounded-lg' style={customStyles} type='button'>
-        {buttonName}
-    </button>
-  )
+    const baseClasses = `
+            bg-gradient-to-r from-purple-500 to-pink-500
+            hover:from-purple-600 hover:to-pink-600
+            text-white font-semibold py-3 px-6 rounded-full
+            transition-colors duration-300
+            text-lg inline-block
+            ${className || ''}
+        `;
+
+  if (href) {
+            // If href is provided, render as an anchor tag
+            return (
+                <Link
+                    to={href}
+                    className={baseClasses}
+                    {...props}
+                >
+                    {children}
+                </Link>
+            );
+        }
+            // Otherwise, render as a button
+            return (
+                <button
+                    className={baseClasses}
+                    type='button'
+                    {...props}
+                >
+                    {children}
+                </button>
+            );
 }
 
 export default ButtonPrimary

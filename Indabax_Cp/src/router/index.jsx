@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import AboutPage from '../pages/AboutPage';
 import ContactPage from '../pages/ContactPage';
-import DevPage from '../pages/DevPage';
+
+import BlogsPage from '../pages/BlogsPage';
 
 function AppRouter() {
   return (
@@ -13,7 +14,7 @@ function AppRouter() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/dev" element={<DevPage />} />
+        <Route path="/blog" element={<BlogsPage />} />
       </Routes>
     </BrowserRouter>
   );

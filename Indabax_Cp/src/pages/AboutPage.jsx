@@ -1,11 +1,9 @@
-// src/pages/AboutPage.jsx
-import React from 'react';
+import AboutPageTemplate from "../components/templates/AboutPageTemplate";
 
 function AboutPage() {
   return (
     <div>
-      <h1>About Us</h1>
-      {/* Add your about page content here */}
+      <AboutPageTemplate />
     </div>
   );
 }
