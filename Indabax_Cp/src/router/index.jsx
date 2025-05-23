@@ -20,7 +20,7 @@ function AppRouter() {
         <Route path="/faq" element={<FAQPageTemplate />} />
         <Route path="/blog" element={<BlogsPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/dev" element={<DevPage />} />
+        {/* <Route path="/dev" element={<DevPage />} /> */}
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
 
         <Route path="/blog/:postId" element={<SingleBlogPostPageTemplate />} />
