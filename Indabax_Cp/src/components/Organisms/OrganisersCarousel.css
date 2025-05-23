@@ -1,0 +1,91 @@
+/* src/components/OrganisersCarousel.css */
+
+/* Base slide styling for ALL screens - no scaling or opacity by default */
+/* This ensures slides are full size and opaque on smaller screens */
+.slick-slide {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  padding: 0 10px; /* Still apply padding to maintain spacing */
+  box-sizing: border-box;
+  transform: scale(1); /* Default to no scaling */
+  opacity: 1; /* Default to full opacity */
+}
+
+/* Specific styles for larger screens (lg breakpoint and up) */
+/* Apply center mode scaling and opacity effects only on large screens */
+@media (min-width: 1024px) { /* Equivalent to Tailwind's lg breakpoint */
+  .slick-slide {
+    transform: scale(0.85); /* Smaller scale for side items on large screens */
+    opacity: 0.7; /* Slightly faded for side items on large screens */
+  }
+
+  .slick-center {
+    transform: scale(1); /* Full scale for the center item on large screens */
+    opacity: 1; /* Fully opaque on large screens */
+  }
+}
+
+/* Adjust padding for the track to ensure scaled items don't get cut off */
+.slick-list {
+  padding: 20px 0 !important;
+}
+
+/* Custom styles for the navigation dots */
+.slick-dots {
+  bottom: -40px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: var(--color-brand-secondary); /* Dot color */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--color-brand-accent); /* Active dot color */
+  opacity: 1;
+}
+
+/* Custom styles for the navigation arrows */
+.slick-prev:before,
+.slick-next:before {
+  color: var(--color-brand-secondary) !important; /* Arrow color */
+  font-size: 30px; /* Adjust size */
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: var(--color-brand-accent) !important; /* Arrow hover color */
+  opacity: 1;
+}
+
+/* Ensure arrows are visible and positioned correctly */
+.slick-prev {
+  left: -40px; /* Adjust position */
+  z-index: 10;
+}
+
+.slick-next {
+  right: -40px; /* Adjust position */
+  z-index: 10;
+}
+
+/* Media queries for arrow positioning on smaller screens (e.g., tablets and mobile) */
+@media (max-width: 767px) { /* For screens smaller than md breakpoint (768px) */
+  .slick-prev {
+    left: 0px; /* Move arrows closer to the edge */
+  }
+  .slick-next {
+    right: 0px; /* Move arrows closer to the edge */
+  }
+}
+
+/* Hide gradient overlays on smaller screens */
+@media (max-width: 1023px) { /* Applies to screens smaller than lg breakpoint */
+    .gradient-overlay-left,
+    .gradient-overlay-right {
+        display: none; /* Hide the gradient divs entirely */
+    }
+}

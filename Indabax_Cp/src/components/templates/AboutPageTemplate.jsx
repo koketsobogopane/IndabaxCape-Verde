@@ -1,45 +1,77 @@
 import React from 'react';
-import HeroSection from '../molecules/HeroSection';
-import heroImage from '../../assets/Images/heroImage1.jpg';
-import Navbar from '../molecules/Navbar';
+
+// Import existing components
+import Navbar from '../molecules/Navbar'
+import Footer from '../Organisms/FooterSection'
+import HeroSection from '../molecules/HeroSection'; // This is your 'Pillars' section now
+import FAQSection from '../Organisms/FAQSection'; // Your existing FAQ
+import CommentDisplaySection from '../Organisms/CommentDisplaySection'; // Could be repurposed for testimonials or past delegate feedback
+
+// Import new components (we'll define these or mock them below)
+import MissionVisionSection from '../molecules/MissionVisionSection';
+import ImpactStatisticsSection from '../Organisms/ImpactStatisticsSection';
+import OrganisersSection from '../Organisms/OrganiserSection';
+import CallToActionSection from '../molecules/CallToActionSection';
+
+// Placeholder images (update these paths with your actual assets)
+import AboutHeroImage from '../../assets/Images/heroImage.jpg'; // A relevant image for the About page hero
+import MissionImage from '../../assets/Images/missionImg.jpg'; // Image for Mission/Vision
+import ImpactImage from '../../assets/Images/purposeImg.jpg'; // Image for impact stats
+import TeamMembersImage from '../../assets/Images/heroImage1.jpg'; // Image for team section background or individuals
 import FooterSection from '../Organisms/FooterSection';
-import AboutSection from '../Organisms/AboutSection';
+import ServicesSection from '../Organisms/ServicesSection';
+import { commentSectionData, organisersSectionData, indabaXCaboVerdeFAQs } from '../../data/data';
 
-function AboutPageTemplate() {
-  const aboutSectionData = {
-    title: 'IndabaX: Empowering African AI Communities',
-    description: `
+const AboutPage = () => {
+    // Define specific data for the About page
+    const indabaXEventDate = '2025-10-26T09:00:00+02:00'; // Event date for Hero (if still relevant)
 
-IndabaX is a dynamic initiative, born out of the Deep Learning Indaba's mission to **Strengthen African AI** and ensure African ownership in the AI revolution.  We're a continent-wide movement that empowers local communities to drive the conversation around Machine Learning and Artificial Intelligence.
 
-Since its inception in 2018 as an expansion of the annual Deep Learning Indaba, IndabaX has grown from supporting 13 locally-organized events to a projected 47 in 2024.  These events, held across Africa, have gathered communities ranging from 50 to over 300 participants, significantly broadening the reach of African AI.  Even the challenges of the global pandemic in 2020 and 2021 didn't stop the program. IndabaX events successfully adapted to online and hybrid formats in 23 countries in 2021, and continued supporting 25 countries in 2022, and 36 in 2023.
 
-Through these locally-organized Indabas, we're spreading knowledge, building capacity, and fostering collaboration in individual countries across Africa.  Join us as we learn, teach, research, and build the peer networks that will shape Africa's AI future.  The IndabaX Program is on an upward growth trajectory and we anticipate covering the entire African continent in the coming years.  This is *your* initiative, driving the AI conversation across our beautiful continent.`,
-    cards: [
-      {
-        title: 'Our Mission',
-        imageUrl: 'https://placehold.co/600x400/EEE/31343C', // Placeholder image
-        linkUrl: '/mission',
-      },
-      {
-        title: 'Our Team',
-        imageUrl: 'https://placehold.co/600x400/EEE/31343C', // Placeholder image
-        linkUrl: '/team',
-      },
-    ],
-  };
-  return (
-    <>
-      <Navbar />
-      <HeroSection title="About Us" image={heroImage} />
-      <AboutSection
-        title={aboutSectionData.title}
-        description={aboutSectionData.description}
-        cards={aboutSectionData.cards}
+    // Example comments/testimonials data (could be adapted for About page)
+ 
+
+    return (
+        <div className="bg-white"> {/* Main container for the about page */}
+            {/* 1. Hero Section for About Page */}
+            <Navbar/>
+            <HeroSection
+                image={AboutHeroImage} // Specific image for about page
+                title="About Deep Learning IndabaX"
+                descriptiveText="Discover our journey, mission, and the impact we're making in Artificial Intelligence across Africa."
+                // No countdown here, as it's not event-specific for the about page hero
+            />
+
+            {/* 2. Mission & Vision Section (New Component) */}
+            <MissionVisionSection />
+
+            {/* 4. Impact & Statistics Section (New Component) */}
+            <ImpactStatisticsSection />
+
+            {/* 5. Team Section (New Component) */}
+            <OrganisersSection
+        title={organisersSectionData.title}
+        description={organisersSectionData.description}
+        organisers={organisersSectionData.organisers}
       />
-      <FooterSection />
-    </>
-  );
-}
 
-export default AboutPageTemplate;
+            {/* 6. Testimonials / What People Say (Reusing CommentDisplaySection) */}
+            {/* You can rename CommentDisplaySection to TestimonialsSection for clarity */}
+            <CommentDisplaySection
+                title="What Our Delegates Say"
+                description="Hear directly from past participants about their IndabaX experience."
+                comments={commentSectionData.comments}
+            />
+
+            {/* 7. Call to Action / Join Us Section (New Component) */}
+            <CallToActionSection />
+
+            {/* 8. FAQ Section (Reusing existing FAQSection) */}
+            {/* This could be placed earlier or later depending on priority */}
+            <FAQSection externalFAQs={indabaXCaboVerdeFAQs}/>
+            <FooterSection />
+        </div>
+    );
+};
+
+export default AboutPage;
