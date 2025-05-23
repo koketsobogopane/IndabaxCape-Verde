@@ -1,5 +1,4 @@
 import React from 'react';
-import CommentCard from '../molecules/commentCard'; // Assuming this component is flexible or will be adapted
 import { CalendarEvent, Clock } from 'react-bootstrap-icons'; // Assuming Bootstrap Icons are available for date/time
 import { getImageURL } from '../../utils/image-utils';
 
