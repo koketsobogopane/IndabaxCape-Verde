@@ -1,5 +1,5 @@
 import React from 'react';
-import CountdownTimer from './CountdownTimer'; // Import the new CountdownTimer component
+import CountdownTimer from './CountdownTimer'; 
 
 const HeroSection = ({ image, title, descriptiveText, eventDate, children }) => { // Added eventDate prop
     return (
