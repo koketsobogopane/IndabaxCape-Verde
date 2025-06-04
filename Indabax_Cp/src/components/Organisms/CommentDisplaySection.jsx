@@ -1,6 +1,7 @@
 import React from 'react';
 import { CalendarEvent, Clock } from 'react-bootstrap-icons'; // Assuming Bootstrap Icons are available for date/time
 import { getImageURL } from '../../utils/image-utils';
+import { Link } from 'react-router-dom';
 
 const CommentDisplaySection = ({ title, description, comments }) => {
   // Use neutral-light for the background
@@ -12,7 +13,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
   const featuredComment = comments?.[0];
   // Note: Original code skipped comments[1] with slice(2).
   // If you intend to show all comments after the first, change to comments?.slice(1).
-  const otherComments = comments?.slice(2); 
+  const otherComments = comments?.slice(2);
 
   return (
     <section className="py-12" style={backgroundStyle}>
@@ -44,7 +45,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                 {/* Content positioned at the bottom-left */}
                 <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
                   {/* Kept white for contrast on dark overlay, but could be brand-accent if desired */}
-                  <p className="text-sm font-semibold mb-2">Most Popular</p> 
+                  <p className="text-sm font-semibold mb-2">Most Popular</p>
                   <h3 className="text-2xl font-bold mb-4 leading-tight">
                     {featuredComment.comment}
                   </h3>
@@ -52,17 +53,6 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                   <p className="text-xs text-white mb-4">
                     {featuredComment.date} - By {featuredComment.name}
                   </p>
-                  {/* "Read More" Button - removed gradient, using brand-accent */}
-                  <a
-                    href={featuredComment.link || '#'}
-                    className="bg-brand-accent
-                               hover:bg-teal-600                 /* Slightly darker teal on hover */
-                               text-white font-semibold py-3 px-6 rounded-full
-                               transition-colors duration-300
-                               text-lg inline-block"
-                  >
-                    Read More
-                  </a>
                 </div>
               </div>
             </div>
@@ -73,21 +63,22 @@ const CommentDisplaySection = ({ title, description, comments }) => {
             // Consider using a unique 'id' from comment data instead of 'index' for key
             <div
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              key={index} 
+              key={index}
               className="rounded-lg shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
             >
               {/* Small Image on Top */}
               <img
-                src={getImageURL(comment.imageUrl,'commentImages')}
+                src={getImageURL(comment.imageUrl, 'commentImages')}
                 alt={comment.name || 'Comment image'}
-                className="w-full h-48 object-cover object-center" 
+                className="w-full h-48 object-cover object-center"
               />
               <div className="p-4">
                 {/* Date and Time Row - changed icon and text color to text-text-subtle */}
                 <div className="flex items-center text-text-subtle text-sm mb-2">
                   <CalendarEvent className="mr-1 text-text-subtle" />{' '}
                   {comment.date}
-                  <Clock className="ml-4 mr-1 text-text-subtle" /> {comment.time}{' '}
+                  <Clock className="ml-4 mr-1 text-text-subtle" />{' '}
+                  {comment.time}{' '}
                 </div>
                 {/* Title/Name - changed text color to text-text-heading */}
                 <h4 className="text-lg font-semibold text-text-heading mb-2">
@@ -97,13 +88,13 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                 <p className="text-text-body text-sm mb-4 line-clamp-3">
                   {comment.comment}
                 </p>
-                {/* Read More Link - changed text color to brand-accent */}
-                <a
-                  href={comment.link || '#'}
-                  className="text-brand-accent hover:text-teal-600 text-sm font-medium"
+                {/* Read More Link - changed text color to brand-accent
+                <Link
+                  to={comment.link || '#'}
+                  className="text-brand-accent hover:text-brand-accent/60 text-sm font-medium"
                 >
                   Read More &rarr;
-                </a>
+                </Link> */}
               </div>
             </div>
           ))}

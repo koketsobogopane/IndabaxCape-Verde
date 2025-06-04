@@ -3,32 +3,41 @@
 @import 'tailwindcss';
 
 #root {
-    padding: 0 !important; 
-    margin: 0;
+  padding: 0 !important;
+  margin: 0;
 }
 
 @theme {
   --font-bebas_neue: 'Bebas Neue', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 
-  --color-brand-primary: #1A202C;    /* Deep Charcoal/Navy */
-  --color-brand-secondary: #2C5282;  /* Rich Muted Blue */
-  --color-brand-accent: #319795;      /* Refined Dark Teal */
+  --color-brand-primary: #1a202c; /* Deep Charcoal/Navy */
+  --color-brand-secondary: #3e5eb9; /* Rich Muted Blue */
+  --color-brand-accent: #3e5eb9; /* Refined Dark Teal */
 
   /* Neutral Colors */
-  --color-neutral-light: #F9FAFB;   /* Very light gray (e.g., for section backgrounds) */
-  --color-neutral-medium: #E5E7EB;  /* Medium gray (e.g., for borders, subtle dividers) */
-  --color-text-body: #374151;       /* Dark gray for main paragraph text */
-  --color-text-heading: #1F2937;    /* Very dark gray/black for main headings */
-  --color-text-light: #6B7280;      /* Slightly lighter gray for secondary text/labels (e.g., gray-500) */
-  --color-white: #FFFFFF; 
+  --color-neutral-light: #f9fafb; /* Very light gray (e.g., for section backgrounds) */
+  --color-neutral-medium: #e5e7eb; /* Medium gray (e.g., for borders, subtle dividers) */
+  --color-text-body: #374151; /* Dark gray for main paragraph text */
+  --color-text-heading: #1f2937; /* Very dark gray/black for main headings */
+  --color-text-light: #6b7280; /* Slightly lighter gray for secondary text/labels (e.g., gray-500) */
+  --color-white: #ffffff;
 }
 
-
-
-h1,h2,h3,h4,h5 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-weight: 400;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'sans-serif', sans-serif;
+  font-weight: 1000;
   font-style: normal;
   line-height: calc(2.5 / 2.25);
+}
+
+p {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
 }

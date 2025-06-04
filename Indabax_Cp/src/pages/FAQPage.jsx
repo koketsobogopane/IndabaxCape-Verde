@@ -1,12 +1,12 @@
-import React from 'react'
-import FAQPageTemplate from '../components/templates/FAQPageTemplate'
+import React from 'react';
+import FAQPageTemplate from '../components/templates/FAQPageTemplate';
 
 function FAQPage() {
   return (
     <>
-       <FAQPage /> 
+      <FAQPage />
     </>
-  )
+  );
 }
 
-export default FAQPage
+export default FAQPage;
