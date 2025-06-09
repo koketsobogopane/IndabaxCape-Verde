@@ -17,7 +17,12 @@ const NotFoundPage = () => {
 
         {/* Descriptive text */}
         <p className="text-lg sm:text-xl text-text-body mb-8">
+<<<<<<< HEAD
           Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
+=======
+          Oops! The page you're looking for doesn't exist. It might have been
+          moved or deleted.
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
         </p>
 
         {/* Call to action button */}
@@ -32,4 +37,8 @@ const NotFoundPage = () => {
   );
 };
 
+<<<<<<< HEAD
 export default NotFoundPage;
+=======
+export default NotFoundPage;
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a

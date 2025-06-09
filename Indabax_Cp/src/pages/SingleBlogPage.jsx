@@ -1,12 +1,12 @@
-import React from 'react'
-import SingleBlogPostPageTemplate from '../components/templates/SingleBlogPostPageTemplate'
+import React from 'react';
+import SingleBlogPostPageTemplate from '../components/templates/SingleBlogPostPageTemplate';
 
 function SingleBlogPage() {
   return (
     <>
-        <SingleBlogPostPageTemplate />
+      <SingleBlogPostPageTemplate />
     </>
-  )
+  );
 }
 
-export default SingleBlogPage
+export default SingleBlogPage;

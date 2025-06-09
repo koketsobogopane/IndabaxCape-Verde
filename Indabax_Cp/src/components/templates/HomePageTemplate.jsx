@@ -17,12 +17,18 @@ import {
   eventsData,
   indabaXEventDate,
   indabaXCaboVerdeFAQs,
+<<<<<<< HEAD
   whyAttendData
 } from '../../data/data';
 import SpeakersSection from '../molecules/SpeakersSection';
 import ContactSection from '../Organisms/ContactSection';
 import WhyAttendSection from '../Organisms/WhyAttendSection';
 
+=======
+} from '../../data/data';
+import SpeakersSection from '../molecules/SpeakersSection';
+import ContactSection from '../Organisms/ContactSection';
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
 
 function HomePageTemplate() {
   const Button = <ButtonPrimary buttonName="Learn More" href="/about" />;
@@ -36,10 +42,16 @@ function HomePageTemplate() {
         heroDescription={dummyheroData.heroDescription}
         CallToAction={Button}
       />
+<<<<<<< HEAD
       <WhyAttendSection {...whyAttendData}/>
       <SpeakersSection />
       <ScheduleSection />
       <SectionCard />   
+=======
+      <SectionCard />
+      <SpeakersSection />
+      <ScheduleSection />
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
       <OrganisersSection
         title={organisersSectionData.title}
         description={organisersSectionData.description}
@@ -50,7 +62,11 @@ function HomePageTemplate() {
         description={commentSectionData.description}
         comments={commentSectionData.comments}
       />
+<<<<<<< HEAD
       <FAQSection externalFAQs={indabaXCaboVerdeFAQs.slice(8)}/>
+=======
+      <FAQSection externalFAQs={indabaXCaboVerdeFAQs.slice(8)} />
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
       <ContactSection />
       <FooterSection />
     </>

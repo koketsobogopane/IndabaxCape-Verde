@@ -18,6 +18,7 @@ import CountdownTimer from '../components/molecules/CountdownTimer';
 
 function DevPage() {
   const sponsors = [
+<<<<<<< HEAD
   { name: 'Sponsor A', logo: 'https://placehold.co/150x80/EEE/31343C', width: 150, height: 80 },
   { name: 'Sponsor B', logo: 'https://placehold.co/150x80/EEE/31343C', width: 150, height: 80 },
   { name: 'Sponsor C', logo: 'https://placehold.co/150x80/EEE/31343C', width: 150, height: 80 },
@@ -25,6 +26,45 @@ function DevPage() {
   { name: 'Sponsor E', logo: 'https://placehold.co/150x80/EEE/31343C', width: 150, height: 80 },
   { name: 'Sponsor F', logo: 'https://placehold.co/150x80/EEE/31343C', width: 150, height: 80 },
 ];
+=======
+    {
+      name: 'Sponsor A',
+      logo: 'https://placehold.co/150x80/EEE/31343C',
+      width: 150,
+      height: 80,
+    },
+    {
+      name: 'Sponsor B',
+      logo: 'https://placehold.co/150x80/EEE/31343C',
+      width: 150,
+      height: 80,
+    },
+    {
+      name: 'Sponsor C',
+      logo: 'https://placehold.co/150x80/EEE/31343C',
+      width: 150,
+      height: 80,
+    },
+    {
+      name: 'Sponsor D',
+      logo: 'https://placehold.co/150x80/EEE/31343C',
+      width: 150,
+      height: 80,
+    },
+    {
+      name: 'Sponsor E',
+      logo: 'https://placehold.co/150x80/EEE/31343C',
+      width: 150,
+      height: 80,
+    },
+    {
+      name: 'Sponsor F',
+      logo: 'https://placehold.co/150x80/EEE/31343C',
+      width: 150,
+      height: 80,
+    },
+  ];
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
 
   return (
     <>
@@ -32,7 +72,11 @@ function DevPage() {
       <ResponsiveBackgroundImage />
       <br />
       <br />
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
       <br />
       <br />
 
@@ -52,16 +96,28 @@ function DevPage() {
       />
       <br />
       <br />
+<<<<<<< HEAD
       <div className="w-75 p-5"><Card
        imageUrl={headshot}
        title = "Rishard Wilson"
        description= "Very importand person"
        additionalDescription={"maybe LinkedIn"}
       /></div>
+=======
+      <div className="w-75 p-5">
+        <Card
+          imageUrl={headshot}
+          title="Rishard Wilson"
+          description="Very importand person"
+          additionalDescription={'maybe LinkedIn'}
+        />
+      </div>
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
       <br />
       <br />
       <br />
       <div className="w-full p-5">
+<<<<<<< HEAD
         <SecondaryCard/>
         </div>
         <br />
@@ -119,6 +175,67 @@ function DevPage() {
         <br />
         <br />
       
+=======
+        <SecondaryCard />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <OrganisersSection
+        title={'Organizers'}
+        description={'This is a simple description'}
+      />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <FooterSection />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="w-[25%]">
+        <CommentCard />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className="w-[25%]">
+        <EventTile />
+      </div>
+      <br />
+      <br />
+      <br />
+      <div className="w-[25%]">
+        <LinkCard card={{}} />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <AboutSection />
+      <br />
+      <br />
+      <br />
+      <br />
+      <SponsorComponent sponsors={sponsors} />
+      <br />
+      <br />
+      <br />
+      <div className="bg-black">
+        <CountdownTimer targetDate={'2026-10-26T09:00:00+02:00'} />
+      </div>
+      <br />
+      <br />
+      <br />
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
     </>
   );
 }

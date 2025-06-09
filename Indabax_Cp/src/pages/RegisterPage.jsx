@@ -1,12 +1,12 @@
-import React from 'react'
-import RegisterPageTemplate from '../components/templates/RegisterPageTemplate'
+import React from 'react';
+import RegisterPageTemplate from '../components/templates/RegisterPageTemplate';
 
 function RegisterPage() {
   return (
     <>
-    <RegisterPageTemplate />
+      <RegisterPageTemplate />
     </>
-  )
+  );
 }
 
-export default RegisterPage
+export default RegisterPage;

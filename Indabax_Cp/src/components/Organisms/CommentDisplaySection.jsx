@@ -13,7 +13,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
   const featuredComment = comments?.[0];
   // Note: Original code skipped comments[1] with slice(2).
   // If you intend to show all comments after the first, change to comments?.slice(1).
-  const otherComments = comments?.slice(2); 
+  const otherComments = comments?.slice(2);
 
   return (
     <section className="py-12" style={backgroundStyle}>
@@ -45,7 +45,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                 {/* Content positioned at the bottom-left */}
                 <div className="relative z-10 p-6 flex flex-col justify-end h-full text-white">
                   {/* Kept white for contrast on dark overlay, but could be brand-accent if desired */}
-                  <p className="text-sm font-semibold mb-2">Most Popular</p> 
+                  <p className="text-sm font-semibold mb-2">Most Popular</p>
                   <h3 className="text-2xl font-bold mb-4 leading-tight">
                     {featuredComment.comment}
                   </h3>
@@ -53,7 +53,10 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                   <p className="text-xs text-white mb-4">
                     {featuredComment.date} - By {featuredComment.name}
                   </p>
+<<<<<<< HEAD
                  
+=======
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                 </div>
               </div>
             </div>
@@ -64,21 +67,27 @@ const CommentDisplaySection = ({ title, description, comments }) => {
             // Consider using a unique 'id' from comment data instead of 'index' for key
             <div
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+<<<<<<< HEAD
               key={index} 
               className="rounded-lg text-left shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
+=======
+              key={index}
+              className="rounded-lg shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
+>>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
             >
               {/* Small Image on Top */}
               <img
-                src={getImageURL(comment.imageUrl,'commentImages')}
+                src={getImageURL(comment.imageUrl, 'commentImages')}
                 alt={comment.name || 'Comment image'}
-                className="w-full h-48 object-cover object-center" 
+                className="w-full h-48 object-cover object-center"
               />
               <div className="p-4">
                 {/* Date and Time Row - changed icon and text color to text-text-subtle */}
                 <div className="flex items-center text-text-subtle text-sm mb-2">
                   <CalendarEvent className="mr-1 text-text-subtle" />{' '}
                   {comment.date}
-                  <Clock className="ml-4 mr-1 text-text-subtle" /> {comment.time}{' '}
+                  <Clock className="ml-4 mr-1 text-text-subtle" />{' '}
+                  {comment.time}{' '}
                 </div>
                 {/* Title/Name - changed text color to text-text-heading */}
                 <h4 className="text-lg font-semibold text-text-heading mb-2">
