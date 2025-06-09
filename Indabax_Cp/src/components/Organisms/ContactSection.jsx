@@ -16,12 +16,7 @@ const ContactSection = () => {
             </h2>
             {/* Changed descriptive text to text-text-body */}
             <p className="text-text-body mb-8">
-<<<<<<< HEAD
               Contact us to learn more 
-=======
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
             </p>
 
             {/* Phone and Email Info */}

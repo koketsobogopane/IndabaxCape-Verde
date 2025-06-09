@@ -1,5 +1,4 @@
 export const organisersSectionData = {
-<<<<<<< HEAD
     title: "The IndabaX Organisers",
     description: "Meet the dedicated individuals who work tirelessly to make IndabaX a reality. Our team is comprised of passionate AI enthusiasts, researchers, and community leaders committed to fostering a vibrant and inclusive AI ecosystem across Africa.",
     organisers: [
@@ -23,31 +22,6 @@ export const organisersSectionData = {
         },
         
     ],
-=======
-  title: 'The IndabaX Organisers',
-  description:
-    'Meet the dedicated individuals who work tirelessly to make IndabaX a reality. Our team is comprised of passionate AI enthusiasts, researchers, and community leaders committed to fostering a vibrant and inclusive AI ecosystem across Africa.',
-  organisers: [
-    {
-      name: 'Jeremiah Olámíjùwón',
-      role: 'Group CEO & Chairman @ eTihuku | Founder and CEO @ Curnance | Organizer',
-      imageUrl: 'placeHolder.jpg', // Updated imageUrl
-      bio: 'Group CEO & Chairman @ eTihuku | Founder and CEO @ Curnance | Organizer of Deep Learning IndabaX, Benin, Cabo Verde, Equatorial Guinea, Seychelles, Gabon, Sao Tome | Mentor @ Just A Chance (JAC) | PhD Candidate @ UJ | |',
-    },
-    {
-      name: 'Valério Santos',
-      role: 'Indaba-X Cabo Verde - Co-organizer',
-      imageUrl: 'Valerio.Santos.jpg', // Updated imageUrl
-      bio: "I'm a software engineer, university lecturer, computer engineering course coordinator, and researcher in the field of serious games in the sustainability context. I have more than 10 years' professional experience in the field (dev and teaching). ",
-    },
-    {
-      name: '',
-      role: 'Indaba-X Cabo Verde - Co-organizer',
-      imageUrl: 'Lucilene.Gomes.jpg', // Updated imageUrl
-      bio: "I have a bachelor's and master's degree in Multimedia, working as a university lecturer and as a Marketing and Communication responsible. My areas of research and interest are multimedia technologies applied to education, as well as social representations of the Internet, digital culture and interactive systems and media..",
-    },
-  ],
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
 };
 
 export const commentSectionData = {
@@ -323,47 +297,7 @@ export const speakers = [
   },
 ];
 
-export const speakers = [
-    {
-      id: 1,
-      name: 'Don Carlo Van Houten',
-      title: 'Senior UX Designer',
-      image: 'speaker1.jpg',
-      social: {
-        instagram: 'https://instagram.com/doncarlo',
-        website: 'https://doncarlo.com',
-        behance: 'https://behance.net/doncarlo',
-      },
-    },
-    {
-      id: 2,
-      name: 'Dr. Aisha Khan',
-      title: 'AI Ethicist',
-      image: 'speaker2.jpg',
-      social: {
-        instagram: 'https://instagram.com/aishakhan',
-        website: 'https://aishakhan.com',
-      },
-    },
-    {
-      id: 3,
-      name: 'Prof. Thabo Mkhize',
-      title: 'Machine Learning Researcher',
-      image: 'speaker3.jpg',
-      social: {
-        behance: 'https://behance.net/thabo',
-      },
-    },
-    {
-      id: 4,
-      name: 'Sarah Johnson',
-      title: 'Product Manager, Tech',
-      image: 'speaker4.jpg',
-      social: {
-        instagram: 'https://instagram.com/sarahj',
-      },
-    },
-  ];
+
 
 export const whyAttendData = {
     title: 'Why Attend Our Summit?',

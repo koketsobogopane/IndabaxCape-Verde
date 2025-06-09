@@ -53,10 +53,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                   <p className="text-xs text-white mb-4">
                     {featuredComment.date} - By {featuredComment.name}
                   </p>
-<<<<<<< HEAD
                  
-=======
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                 </div>
               </div>
             </div>
@@ -67,13 +64,8 @@ const CommentDisplaySection = ({ title, description, comments }) => {
             // Consider using a unique 'id' from comment data instead of 'index' for key
             <div
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-<<<<<<< HEAD
               key={index} 
               className="rounded-lg text-left shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
-=======
-              key={index}
-              className="rounded-lg shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
             >
               {/* Small Image on Top */}
               <img

@@ -6,12 +6,7 @@ const BackToTopButton = () => {
 
   // Show button when page is scrolled down
   const toggleVisibility = () => {
-<<<<<<< HEAD
     if (window.pageYOffset > 300) { // Show button after scrolling 300px down
-=======
-    if (window.pageYOffset > 300) {
-      // Show button after scrolling 300px down
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -22,11 +17,7 @@ const BackToTopButton = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-<<<<<<< HEAD
       behavior: 'smooth' // Smooth scroll animation
-=======
-      behavior: 'smooth', // Smooth scroll animation
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
     });
   };
 
@@ -51,8 +42,4 @@ const BackToTopButton = () => {
   );
 };
 
-<<<<<<< HEAD
 export default BackToTopButton;
-=======
-export default BackToTopButton;
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a

@@ -17,15 +17,9 @@ import partnerLogo5 from '../../assets/Images/logos/cisco-2-logo-svgrepo-com.svg
 
 // Import your CallToAction component
 import CallToAction from './CallToActionSection'; // Adjust path as needed
-<<<<<<< HEAD
 import TextLink from '../atoms/TextLink';
 
 const ServicesSection = ({ showPartners = false }) => { // Added showPartners prop with a default value
-=======
-
-const ServicesSection = ({ showPartners = false }) => {
-  // Added showPartners prop with a default value
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
   // Array of partner logos. You can dynamically populate this from an API or config.
   const partners = [
     partnerLogo1,
@@ -50,23 +44,10 @@ const ServicesSection = ({ showPartners = false }) => {
             — Empowering Africa through AI
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-heading mb-6 leading-tight">
-<<<<<<< HEAD
             Deep Learning IndabaX: <br className="hidden md:inline" /> Fostering AI Innovation Across the Continent
           </h2>
           <p className="text-text-body max-w-2xl mx-auto md:mx-0">
             The Deep Learning IndabaX is more than a conference; it's a critical movement dedicated to advancing Artificial Intelligence research and application within African communities. We bring together researchers, students, and practitioners to share knowledge, build networks, and drive solutions tailored to Africa's unique challenges. <TextLink href='https://deeplearningindaba.com/about/our-mission/'>Learn more about Deep Learning Indaba here.</TextLink>
-=======
-            Deep Learning IndabaX: <br className="hidden md:inline" /> Fostering
-            AI Innovation Across the Continent
-          </h2>
-          <p className="text-text-body max-w-2xl mx-auto md:mx-0">
-            The Deep Learning IndabaX is more than a conference; it's a critical
-            movement dedicated to advancing Artificial Intelligence research and
-            application within African communities. We bring together
-            researchers, students, and practitioners to share knowledge, build
-            networks, and drive solutions tailored to Africa's unique
-            challenges.
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
           </p>
         </div>
 
@@ -154,13 +135,7 @@ const ServicesSection = ({ showPartners = false }) => {
             ))}
           </div>
         ) : (
-<<<<<<< HEAD
           <div className="mt-16"> {/* Added margin top for spacing */}
-=======
-          <div className="mt-16">
-            {' '}
-            {/* Added margin top for spacing */}
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
             <CallToAction />
           </div>
         )}

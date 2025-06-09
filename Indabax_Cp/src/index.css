@@ -11,15 +11,9 @@
   --font-bebas_neue: 'Bebas Neue', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
 
-<<<<<<< HEAD
   --color-brand-primary: #1A202C;    /* Deep Charcoal/Navy */
   --color-brand-secondary: #3E5EB9;  /* Rich Muted Blue */
   --color-brand-accent: #3E5EB9;      /* Refined Dark Teal */
-=======
-  --color-brand-primary: #1a202c; /* Deep Charcoal/Navy */
-  --color-brand-secondary: #3e5eb9; /* Rich Muted Blue */
-  --color-brand-accent: #3e5eb9; /* Refined Dark Teal */
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
 
   /* Neutral Colors */
   --color-neutral-light: #f9fafb; /* Very light gray (e.g., for section backgrounds) */
@@ -30,17 +24,9 @@
   --color-white: #ffffff;
 }
 
-<<<<<<< HEAD
 
 
 h1,h2,h3,h4,h5 {
-=======
-h1,
-h2,
-h3,
-h4,
-h5 {
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
   font-family: 'sans-serif', sans-serif;
   font-weight: 1000;
   font-style: normal;

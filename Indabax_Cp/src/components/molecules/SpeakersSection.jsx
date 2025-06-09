@@ -40,11 +40,7 @@ const SpeakersSection = () => {
   };
 
   return (
-<<<<<<< HEAD
     <section className="bg-white text-gray-900 py-16 lg:py-18 overflow-hidden">
-=======
-    <section className="bg-white text-gray-900 py-16 lg:py-24 overflow-hidden">
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
                     flex flex-col lg:grid lg:grid-cols-2
@@ -57,13 +53,8 @@ const SpeakersSection = () => {
             SPEAKERS
           </p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8 leading-tight">
-<<<<<<< HEAD
             Meet the
             <br className="hidden sm:inline" /> Incredible <br /> Speakers
-=======
-            MEET THE <br className="hidden sm:inline" /> INCREDIBLE <br />{' '}
-            SPEAKERS
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
           </h2>
           <p className="text-gray-700 max-w-md mx-auto lg:mx-0 mb-8 sm:mb-10">
             Main event for professionals in the world of AI and Innovation.
@@ -95,7 +86,6 @@ const SpeakersSection = () => {
           <Slider ref={sliderRef} {...settings}>
             {speakers.map((speaker) => (
               <div key={speaker.id} className="px-2 sm:px-4">
-<<<<<<< HEAD
                 <div className="block relative h-72 rounded-lg shadow-md overflow-hidden group hover:shadow-lg transition-shadow duration-300 sm:h-[500px] md:h-[550px] lg:h-[500px]">
                   {/* Speaker Image */}
                   <div className="absolute inset-0">
@@ -103,22 +93,12 @@ const SpeakersSection = () => {
                       src={getImageURL(speaker.image, 'speakers')}
                       alt={speaker.name}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-=======
-                <div className="bg-gray-100 rounded-lg shadow-xl overflow-hidden flex flex-col items-center justify-center p-6 sm:p-8 md:p-10 h-[450px] sm:h-[500px] md:h-[550px] lg:h-[500px]">
-                  {/* Speaker Image */}
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden mb-4 sm:mb-6 border-4 border-white shadow-md flex-shrink-0">
-                    <img
-                      src={getImageURL(speaker.image, 'speakers')}
-                      alt={speaker.name}
-                      className="w-full h-full object-cover"
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src =
                           'https://placehold.co/400x400/E0E0E0/333333?text=No+Image';
                       }}
                     />
-<<<<<<< HEAD
 
                     <div className="absolute inset-0  group-hover:bg-black/50 transition-colors duration-300 " />
                   </div>
@@ -128,30 +108,12 @@ const SpeakersSection = () => {
                     </h3>
 
                     <div className="flex justify-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
-=======
-                  </div>
-
-                  {/* Speaker Info */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
-                    {speaker.name}
-                  </h3>
-                  <p className="text-base sm:text-lg text-gray-600 mb-4">
-                    {speaker.title}
-                  </p>
-
-                  {/* Social Icons */}
-                  <div className="flex space-x-3 sm:space-x-4 mb-4 sm:mb-6">
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                     {speaker.social.instagram && (
                       <a
                         href={speaker.social.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-<<<<<<< HEAD
                         className="text-white transition-colors duration-300"
-=======
-                        className="text-gray-700 hover:text-brand-primary transition-colors duration-300"
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                         aria-label={`Follow ${speaker.name} on Instagram`}
                       >
                         <Instagram size={22} />
@@ -162,11 +124,7 @@ const SpeakersSection = () => {
                         href={speaker.social.website}
                         target="_blank"
                         rel="noopener noreferrer"
-<<<<<<< HEAD
                         className="text-white transition-colors duration-300"
-=======
-                        className="text-gray-700 hover:text-brand-primary transition-colors duration-300"
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                         aria-label={`Visit ${speaker.name}'s website`}
                       >
                         <Globe size={22} />
@@ -177,11 +135,7 @@ const SpeakersSection = () => {
                         href={speaker.social.behance}
                         target="_blank"
                         rel="noopener noreferrer"
-<<<<<<< HEAD
                         className="text-white transition-colors duration-300"
-=======
-                        className="text-gray-700 hover:text-brand-primary transition-colors duration-300"
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                         aria-label={`View ${speaker.name}'s Behance portfolio`}
                       >
                         <span className="text-base sm:text-lg font-bold">
@@ -190,12 +144,9 @@ const SpeakersSection = () => {
                       </a>
                     )}
                   </div>
-<<<<<<< HEAD
                   </div>
                   {/* Social Icons */}
                   
-=======
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
 
                   {/* Behance Button (if applicable) */}
                   {speaker.social.behance && (
@@ -203,11 +154,7 @@ const SpeakersSection = () => {
                       href={speaker.social.behance}
                       target="_blank"
                       rel="noopener noreferrer"
-<<<<<<< HEAD
                       className="inline-block px-5 py-2 border border-gray-400 rounded-md text-white  transition-colors duration-300 text-sm sm:text-base"
-=======
-                      className="inline-block px-5 py-2 border border-gray-400 rounded-md text-gray-700 hover:bg-gray-100 transition-colors duration-300 text-sm sm:text-base"
->>>>>>> 54a55a691565795f2dbb8235d7956d0610e2458a
                     >
                       Be
                     </a>
