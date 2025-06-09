@@ -11,7 +11,7 @@ const HeroSection = ({
   // Added eventDate prop
   return (
     <section
-      className="relative bg-cover bg-center min-h-[50vh] top-14 bg-no-repeat py-20 md:py-32"
+      className="relative bg-cover bg-center min-h-[70vh] top-0 bg-no-repeat py-20 md:py-32"
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay for better text readability */}
