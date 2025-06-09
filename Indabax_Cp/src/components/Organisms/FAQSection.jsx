@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQItem from '../atoms/FaqItem';
+import FAQItem from '../atoms/FAQItem';
 import ButtonPrimary from '../atoms/ButtonPrimary';
 
 // Change: Accept an externalFAQs prop

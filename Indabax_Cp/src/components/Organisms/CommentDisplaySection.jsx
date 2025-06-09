@@ -1,6 +1,7 @@
 import React from 'react';
 import { CalendarEvent, Clock } from 'react-bootstrap-icons'; // Assuming Bootstrap Icons are available for date/time
 import { getImageURL } from '../../utils/image-utils';
+import { Link } from 'react-router-dom';
 
 const CommentDisplaySection = ({ title, description, comments }) => {
   // Use neutral-light for the background
@@ -31,7 +32,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Featured Comment Card (Left Side) */}
           {featuredComment && (
-            <div className="md:col-span-1 md:row-span-2">
+            <div className="md:col-span-1 text-left md:row-span-2">
               <div className="relative h-full rounded-lg shadow-lg overflow-hidden group">
                 <img
                   src={getImageURL(featuredComment.imageUrl, 'commentImages')}
@@ -52,17 +53,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                   <p className="text-xs text-white mb-4">
                     {featuredComment.date} - By {featuredComment.name}
                   </p>
-                  {/* "Read More" Button - removed gradient, using brand-accent */}
-                  <a
-                    href={featuredComment.link || '#'}
-                    className="bg-brand-accent
-                               hover:bg-teal-600                 /* Slightly darker teal on hover */
-                               text-white font-semibold py-3 px-6 rounded-full
-                               transition-colors duration-300
-                               text-lg inline-block"
-                  >
-                    Read More
-                  </a>
+                 
                 </div>
               </div>
             </div>
@@ -74,7 +65,7 @@ const CommentDisplaySection = ({ title, description, comments }) => {
             <div
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               key={index} 
-              className="rounded-lg shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
+              className="rounded-lg text-left shadow-md overflow-hidden bg-white group hover:shadow-lg transition-shadow duration-300"
             >
               {/* Small Image on Top */}
               <img
@@ -97,13 +88,13 @@ const CommentDisplaySection = ({ title, description, comments }) => {
                 <p className="text-text-body text-sm mb-4 line-clamp-3">
                   {comment.comment}
                 </p>
-                {/* Read More Link - changed text color to brand-accent */}
-                <a
-                  href={comment.link || '#'}
-                  className="text-brand-accent hover:text-teal-600 text-sm font-medium"
+                {/* Read More Link - changed text color to brand-accent
+                <Link
+                  to={comment.link || '#'}
+                  className="text-brand-accent hover:text-brand-accent/60 text-sm font-medium"
                 >
                   Read More &rarr;
-                </a>
+                </Link> */}
               </div>
             </div>
           ))}

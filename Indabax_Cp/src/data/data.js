@@ -5,39 +5,22 @@ export const organisersSectionData = {
         {
             name: "Jeremiah Olámíjùwón",
             role: "Group CEO & Chairman @ eTihuku | Founder and CEO @ Curnance | Organizer",
-            imageUrl: "jeremiah-olamijuwon.jpg", // Updated imageUrl
+            imageUrl: "placeHolder.jpg", // Updated imageUrl
             bio: "Group CEO & Chairman @ eTihuku | Founder and CEO @ Curnance | Organizer of Deep Learning IndabaX, Benin, Cabo Verde, Equatorial Guinea, Seychelles, Gabon, Sao Tome | Mentor @ Just A Chance (JAC) | PhD Candidate @ UJ | |",
         },
         {
-            name: "Yusuf Kenyah",
-            role: "Program Director",
-            imageUrl: "yusuf-kenyah.jpg", // Updated imageUrl
-            bio: "Yusuf is responsible for curating the conference program, including speaker selection, workshops, and tutorials. He is passionate about showcasing the diversity of African AI talent.",
+            name: "Valério Santos",
+            role: "Indaba-X Cabo Verde - Co-organizer",
+            imageUrl: "Valerio.Santos.jpg", // Updated imageUrl
+            bio: "I'm a software engineer, university lecturer, computer engineering course coordinator, and researcher in the field of serious games in the sustainability context. I have more than 10 years' professional experience in the field (dev and teaching). ",
         },
         {
-            name: "Fatima Hassan",
-            role: "Community Liaison",
-            imageUrl: "fatima-hassan.jpg", // Updated imageUrl
-            bio: "Fatima works to build strong relationships with local communities and ensure the conference is accessible and inclusive to all. She is a strong advocate for diversity and inclusion in AI.",
+            name: "",
+            role: "Indaba-X Cabo Verde - Co-organizer",
+            imageUrl: "Lucilene.Gomes.jpg", // Updated imageUrl
+            bio: "I have a bachelor's and master's degree in Multimedia, working as a university lecturer and as a Marketing and Communication responsible. My areas of research and interest are multimedia technologies applied to education, as well as social representations of the Internet, digital culture and interactive systems and media..",
         },
-        {
-            name: "Kofi Mensah",
-            role: "Sponsorship Lead",
-            imageUrl: "kofi-mensah.jpg", // Updated imageUrl
-            bio: "Kofi is responsible for securing funding and partnerships for the conference. He works with organizations that are committed to supporting AI development in Africa.",
-        },
-        {
-            name: "Aisha Diallo",
-            role: "Communications Manager",
-            imageUrl: "aisha-diallo.jpg", // Updated imageUrl
-            bio: "Aisha manages all conference communications, including website, social media, and public relations. She ensures that the conference's message reaches a broad audience.",
-        },
-        {
-            name: "David Obi",
-            role: "Logistics Coordinator",
-            imageUrl: "david-obi.jpg", // Updated imageUrl
-            bio: "David oversees the planning and execution of all logistical aspects of the conference, including venue management, registration, and attendee support.",
-        },
+        
     ],
 };
 
@@ -237,3 +220,161 @@ export const blogPosts = [
     },
     // Add more blog posts as needed
 ];
+
+export const speakers = [
+    {
+      id: 1,
+      name: 'Don Carlo Van Houten',
+      title: 'Senior UX Designer',
+      image: 'speaker1.jpg',
+      social: {
+        instagram: 'https://instagram.com/doncarlo',
+        website: 'https://doncarlo.com',
+        behance: 'https://behance.net/doncarlo',
+      },
+    },
+    {
+      id: 2,
+      name: 'Dr. Aisha Khan',
+      title: 'AI Ethicist',
+      image: 'speaker2.jpg',
+      social: {
+        instagram: 'https://instagram.com/aishakhan',
+        website: 'https://aishakhan.com',
+      },
+    },
+    {
+      id: 3,
+      name: 'Prof. Thabo Mkhize',
+      title: 'Machine Learning Researcher',
+      image: 'speaker3.jpg',
+      social: {
+        behance: 'https://behance.net/thabo',
+      },
+    },
+    {
+      id: 4,
+      name: 'Sarah Johnson',
+      title: 'Product Manager, Tech',
+      image: 'speaker4.jpg',
+      social: {
+        instagram: 'https://instagram.com/sarahj',
+      },
+    },
+  ];
+
+export const whyAttendData = {
+    title: 'Why Attend Our Summit?',
+    subtitle: 'Unlock new insights, expand your network, and shape the future of AI for a sustainable environment.',
+    reasons: [
+      {
+        title: 'Network with Industry Leaders',
+        description: 'Connect with pioneering researchers, top executives, and innovative startups in the AI and sustainability sectors.',
+        url: 'innovation-drive.jpg',
+      },
+      {
+        title: 'Discover Cutting-Edge AI Solutions',
+        description: 'Explore the latest advancements in AI technologies specifically designed to address environmental challenges.',
+        url: 'knowledge-sharing.jpg',
+      },
+      {
+        title: 'Learn from Inspiring Keynotes',
+        description: 'Hear from visionary speakers who are driving change at the intersection of artificial intelligence and ecological conservation.',
+        url: 'miniAboutUs.jpg',
+      },
+      {
+        title: 'Shape the Future of Green Tech',
+        description: 'Contribute to discussions and collaborative efforts aimed at developing sustainable AI practices and policies.',
+        url: 'miniAboutUs.jpg',
+      },
+    ],
+    mainImage: {
+      url: 'purposeImg.jpg', // Placeholder image. Replace with a relevant image.
+      alt: 'Abstract digital representation of nature and data blending.',
+    },
+    mainDescription: 'This summit is more than just a series of talks; it\'s a collaborative platform designed to foster innovation and cross-sector partnerships. We bring together diverse perspectives to tackle the most pressing environmental issues using the power of artificial intelligence. From groundbreaking research presentations to interactive sessions on practical applications, every segment is curated to provide actionable knowledge and inspire collective action towards a greener future. Join us to be part of the movement that leverages technology for ecological stewardship.',
+  };
+
+export const allEventData = {
+    '2024': {
+        title: 'AI FOR SUSTAINABLE ENVIRONMENTAL MANAGEMENT',
+        description:
+            'We had the pleasure of participating in the 1st edition of Deep Learning IndabaX Cabo Verde, an event that brought together students, academics and startups to drive the development of Artificial Intelligence (AI) and Machine Learning in the country.',
+
+        eventDate: 'November 28-29, 2024',
+        images: [
+            { url: 'summit_keynote.jpg', alt: 'Keynote Speaker Dr. Emily Chen on AI' },
+            { url: 'summit_networking.jpg', alt: 'Attendees networking during a coffee break' },
+            { url: 'summit_workshop.jpg', alt: 'Developers participating in a React Hooks workshop' },
+            { url: 'summit_booths.jpg', alt: 'Exhibitor booths showcasing new technologies' },
+            { url: 'summit_audience.jpg', alt: 'Engaged audience during a panel discussion' },
+        ],
+        schedule: [
+            {
+                time: '09:00 AM - 10:00 AM',
+                title: 'Opening Keynote: AI and the Future',
+                description: 'Dr. Emily Chen, a renowned AI ethicist, shared her groundbreaking insights on generative AI and its societal implications.',
+                speaker: 'Dr. Emily Chen',
+            },
+            {
+                time: '10:30 AM - 11:30 AM',
+                title: 'Panel Discussion: Sustainable Tech Solutions',
+                description: 'Experts debated innovative green tech solutions and their role in combating climate change.',
+                speaker: 'Various Industry Leaders', // Example for multiple speakers
+            },
+            {
+                time: '11:30 AM - 12:30 PM',
+                title: 'Breakout Session: Cloud Computing Security',
+                description: 'A deep dive into best practices for securing cloud infrastructure.',
+            },
+            {
+                time: '01:30 PM - 02:30 PM',
+                title: 'Workshop: Mastering React Hooks',
+                description: 'An interactive session for developers to enhance their React skills with practical examples.',
+                speaker: 'Alex Developer',
+            },
+            {
+                time: '02:30 PM - 03:30 PM',
+                title: 'Lightning Talks: Future of Web Development',
+                description: 'Short, impactful talks on emerging trends and technologies in web development.',
+            },
+        ],
+        comments: [
+            {
+                imageUrl: 'comment-1.jpg', // Placeholder image
+                name: 'John Doe',
+                date: 'May 17, 2024',
+                time: '10:30 AM',
+                comment: 'Fantastic summit! The keynote was incredibly insightful and the networking opportunities were invaluable. Already looking forward to next year!',
+            },
+            {
+                imageUrl: 'comment-2.jpg', // Placeholder image
+                name: 'Jane Smith',
+                date: 'May 18, 2024',
+                time: '02:15 PM',
+                comment: 'Really enjoyed the workshop on React Hooks. Learned so much in a short time. The instructor was excellent. Highly recommend!',
+            },
+            {
+                imageUrl: 'comment-3.jpg', // Placeholder image
+                name: 'Mike Brown',
+                date: 'May 18, 2024',
+                time: '09:00 AM',
+                comment: 'The panel on sustainable tech was thought-provoking. Great discussions and diverse perspectives from all panelists. It really made me think.',
+            },
+            {
+                imageUrl: 'comment-4.jpg', // Placeholder image
+                name: 'Sarah Lee',
+                date: 'May 17, 2024',
+                time: '04:00 PM',
+                comment: 'The overall organization was superb. Everything ran smoothly, and there was always someone helpful around. Kudos to the team!',
+            },
+        ],
+        stats: [
+            { number: '500+', label: 'Attendees' },
+            { number: '20', label: 'Speakers' },
+            { number: '15', label: 'Workshops' },
+            { number: '95%', label: 'Satisfaction Rate' },
+        ],
+    },
+ 
+};

@@ -8,7 +8,7 @@ import SectionCard from '../molecules/SectionCard';
 import OrganisersSection from '../Organisms/OrganiserSection';
 import Card from '../molecules/Card';
 import CommentDisplaySection from '../Organisms/CommentDisplaySection';
-import UpcomingEventsSection from '../Organisms/UpcomingEventsSection';
+import ScheduleSection from '../Organisms/ScheduleSection';
 import FAQSection from '../Organisms/FAQSection';
 import {
   organisersSectionData,
@@ -16,8 +16,13 @@ import {
   dummyheroData,
   eventsData,
   indabaXEventDate,
-  indabaXCaboVerdeFAQs
+  indabaXCaboVerdeFAQs,
+  whyAttendData
 } from '../../data/data';
+import SpeakersSection from '../molecules/SpeakersSection';
+import ContactSection from '../Organisms/ContactSection';
+import WhyAttendSection from '../Organisms/WhyAttendSection';
+
 
 function HomePageTemplate() {
   const Button = <ButtonPrimary buttonName="Learn More" href="/about" />;
@@ -31,7 +36,10 @@ function HomePageTemplate() {
         heroDescription={dummyheroData.heroDescription}
         CallToAction={Button}
       />
-      <SectionCard />
+      <WhyAttendSection {...whyAttendData}/>
+      <SpeakersSection />
+      <ScheduleSection />
+      <SectionCard />   
       <OrganisersSection
         title={organisersSectionData.title}
         description={organisersSectionData.description}
@@ -43,11 +51,7 @@ function HomePageTemplate() {
         comments={commentSectionData.comments}
       />
       <FAQSection externalFAQs={indabaXCaboVerdeFAQs.slice(8)}/>
-      <UpcomingEventsSection
-        title={'Upcoming Events'}
-        description={''}
-        event={eventsData}
-      />
+      <ContactSection />
       <FooterSection />
     </>
   );

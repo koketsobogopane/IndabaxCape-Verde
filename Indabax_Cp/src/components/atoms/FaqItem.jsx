@@ -11,7 +11,7 @@ const FAQItem = ({ question, answer }) => {
 
     return (
         // Changed border-gray-200 to border-neutral-medium
-        <div className="border-b border-neutral-medium py-4 cursor-pointer" onKeyDown={()=>{}} onClick={toggleOpen}>
+        <div className="border-b border-neutral-medium py-4 cursor-pointer text-left" onKeyDown={()=>{}} onClick={toggleOpen}>
             <div className="flex items-start justify-between">
                 <div className="flex items-center">
                     {/* Changed text-purple-600 to text-brand-accent for the icon */}

@@ -7,7 +7,7 @@ function ButtonPrimary({className,
 
     const baseClasses = `
         bg-brand-accent            /* Use solid brand-accent color */
-        hover:bg-teal-600          /* Slightly darker teal for hover effect */
+        hover:bg-brand-accent/70         /* Slightly darker teal for hover effect */
         text-white font-semibold py-3 px-6 rounded-full
         transition-colors duration-300
         text-lg inline-block
