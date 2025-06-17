@@ -40,7 +40,7 @@ const SpeakersSection = () => {
   };
 
   return (
-    <section className="bg-white text-gray-900 py-16 lg:py-18 overflow-hidden">
+    <section className="bg-gray-100 text-gray-900 py-16 lg:py-18 overflow-hidden">
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
                     flex flex-col lg:grid lg:grid-cols-2

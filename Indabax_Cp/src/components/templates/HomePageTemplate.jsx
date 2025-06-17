@@ -36,10 +36,10 @@ function HomePageTemplate() {
         heroDescription={dummyheroData.heroDescription}
         CallToAction={Button}
       />
-      <WhyAttendSection {...whyAttendData}/>
+      <SectionCard />
+      <WhyAttendSection {...whyAttendData}/>  
       <SpeakersSection />
-      <ScheduleSection />
-      <SectionCard />   
+      <ScheduleSection />    
       <OrganisersSection
         title={organisersSectionData.title}
         description={organisersSectionData.description}

@@ -1,4 +1,4 @@
-import AboutPageTemplate from '../components/templates/AboutPageTemplate';
+import AboutPageTemplate from "../components/templates/AboutPageTemplate";
 
 function AboutPage() {
   return (

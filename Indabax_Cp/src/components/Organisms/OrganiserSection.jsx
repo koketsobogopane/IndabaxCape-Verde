@@ -1,164 +1,151 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Card from '../molecules/Card';
-import Slider from 'react-slick';
-import './OrganisersCarousel.css'; // Make sure this is imported
 import { getImageURL } from '../../utils/image-utils';
 
-// Ensure slick-carousel's base CSS is imported globally (e.g., in App.js or index.js)
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+const OrganisersSection = ({ title, description, organisers }) => { // Renamed 'organisers' to 'speakers' for clarity
+    // Dummy data for demonstration if 'speakers' prop is not provided
+    const dummySpeakers = [
+        { id: 'patricia-wilkinson', name: 'Patricia Wilkinson', role: 'HR Consultant', imageUrl: getImageURL('patricia-wilkinson.png', 'speakers') },
+        { id: 'kendra-cremin', name: 'Kendra Cremin', role: 'UI/UX Designer', imageUrl: getImageURL('kendra-cremin.png', 'speakers') },
+        { id: 'dennis-jacobson', name: 'Dennis Jacobson', role: 'Finance Consultant', imageUrl: getImageURL('dennis-jacobson.png', 'speakers') },
+        { id: 'patricia-wilkinson-2', name: 'Patricia Wilkinson', role: 'HR Consultant', imageUrl: getImageURL('patricia-wilkinson-2.png', 'speakers') },
+        { id: 'john-doe', name: 'John Doe', role: 'Marketing Specialist', imageUrl: getImageURL('john-doe.png', 'speakers') },
+        { id: 'jane-smith', name: 'Jane Smith', role: 'Software Engineer', imageUrl: getImageURL('jane-smith.png', 'speakers') },
+    ];
 
-const OrganisersSection = ({ title, description, organisers }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // Needs to be an odd number for centerMode to work effectively on large screens
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: 'linear',
-    centerMode: true, // Enable center mode
-    centerPadding: '0px', // We'll handle padding/spacing with custom CSS transforms
+    const displaySpeakers = organisers && organisers.length > 0 ? organisers : dummySpeakers;
 
-    // Responsive settings for different screen sizes
-    responsive: [
-      {
-        breakpoint: 1024, // For screens smaller than 1024px (lg breakpoint)
-        settings: {
-          slidesToShow: 2, // Show 2 slides on tablets
-          slidesToScroll: 1,
-          centerMode: false, // Disable center mode when showing 2 slides
-        },
-      },
-      {
-        breakpoint: 768, // For screens smaller than 768px (md breakpoint)
-        settings: {
-          slidesToShow: 1, // Show 1 slide on mobile
-          slidesToScroll: 1,
-          centerMode: false, // Disable center mode for single slide view
-          arrows: false, // Optional: Hide arrows on very small screens for cleaner look
-        },
-      },
-    ],
-  };
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [slidesToShow, setSlidesToShow] = useState(4); // Default for desktop
+    const slideTrackRef = useRef(null); // Ref to access the slide container for scroll
 
-  // Dummy data for demonstration if 'organisers' prop is not provided
-  const dummyOrganisers = [
-    {
-      id: 'texumola-alade',
-      name: 'DR. TEXUMOLA ALADE',
-      role: 'Conference Chair',
-      bio: 'Leading researcher in AI, focusing on healthcare applications. Provides leadership and strategic direction.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org1',
-    },
-    {
-      id: 'yusuf-kenyah',
-      name: 'YUSUF KENYAH',
-      role: 'Program Director',
-      bio: 'Responsible for curating the conference program and showcasing African AI talent.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org2',
-    },
-    {
-      id: 'fatima-hassan',
-      name: 'FATIMA HASSAN',
-      role: 'Community Liaison',
-      bio: 'Builds relationships with local communities, ensuring accessibility and inclusivity in AI.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org3',
-    },
-    {
-      id: 'joao-silva',
-      name: 'JOÃO SILVA',
-      role: 'Logistics Coordinator',
-      bio: 'Manages all event logistics for a seamless participant experience.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org4',
-    },
-    {
-      id: 'ana-pires',
-      name: 'ANA PIRES',
-      role: 'Volunteer Manager',
-      bio: 'Coordinates the volunteer team, ensuring their support and effective contribution.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org5',
-    },
-    {
-      id: 'rui-gomes',
-      name: 'RUI GOMES',
-      role: 'Sponsorship Lead',
-      bio: 'Engages partners and sponsors to secure resources for IndabaX success.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org6',
-    },
-    {
-      id: 'sara-mendes',
-      name: 'SARA MENDES',
-      role: 'Research Lead',
-      bio: 'Drives cutting-edge AI research initiatives within the IndabaX framework.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org7',
-    },
-    {
-      id: 'david-nkosi',
-      name: 'DAVID NKOSI',
-      role: 'Partnerships Manager',
-      bio: 'Fosters collaborations with industry and academia to expand IndabaX reach.',
-      imageUrl: 'https://placehold.co/150x150/EDF2F7/4A5568?text=Org8',
-    },
-  ];
+    // Function to update slidesToShow based on screen width
+    const updateSlidesToShow = () => {
+        if (window.innerWidth < 768) {
+            setSlidesToShow(1);
+        } else if (window.innerWidth < 1024) {
+            setSlidesToShow(2);
+        } else if (window.innerWidth < 1280) {
+            setSlidesToShow(3);
+        } else {
+            setSlidesToShow(4);
+        }
+    };
 
-  const displayOrganisers =
-    organisers && organisers.length > 0 ? organisers : dummyOrganisers;
+    // Effect to set initial slidesToShow and listen for resize
+    useEffect(() => {
+        updateSlidesToShow(); // Set initial value
+        window.addEventListener('resize', updateSlidesToShow);
+        return () => window.removeEventListener('resize', updateSlidesToShow);
+    }, []);
 
-  return (
-    <section className="py-12 bg-neutral-light relative text-left overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-text-heading mb-4">
-            {title || 'Meet Our Organisers'}
-          </h1>
-          <p className="text-text-body max-w-2xl mx-auto">
-            {description ||
-              'The dedicated individuals who make IndabaX possible. Our team is comprised of passionate AI enthusiasts, researchers, and community leaders.'}
-          </p>
-        </div>
 
-        {displayOrganisers.length > 0 ? (
-          <div className="relative mx-auto max-w-6xl">
-            {/* Left Gradient Overlay - ADDED CLASS gradient-overlay-left */}
-            <div
-              className="gradient-overlay-left absolute left-0 top-0 bottom-0 w-32 z-20 pointer-events-none"
-              style={{
-                background:
-                  'linear-gradient(to right, var(--color-neutral-light) 0%, transparent 100%)',
-              }}
-            />
-            {/* Right Gradient Overlay - ADDED CLASS gradient-overlay-right */}
-            <div
-              className="gradient-overlay-right absolute right-0 top-0 bottom-0 w-32 z-20 pointer-events-none"
-              style={{
-                background:
-                  'linear-gradient(to left, var(--color-neutral-light) 0%, transparent 100%)',
-              }}
-            />
+    // Custom navigation logic
+    const nextSlide = () => {
+        if (slideTrackRef.current) {
+            const track = slideTrackRef.current;
+            // Calculate actual width of a single slide item including its horizontal padding
+            const slideItem = track.children[0];
+            const slideWidth = slideItem ? slideItem.offsetWidth : 0;
+            const scrollAmount = slideWidth; // Scroll by the width of one card
 
-            <Slider {...settings}>
-              {displayOrganisers.map((organiser) => (
-                <div key={organiser.id} className="p-3">
-                  <Card
-                    imageUrl={getImageURL(organiser.imageUrl, 'organisers')}
-                    title={organiser.name}
-                    description={organiser.role}
-                    additionalDescription={organiser.bio}
-                  />
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+
+            setCurrentSlide((prev) => (prev + 1) % displaySpeakers.length);
+        }
+    };
+
+    const prevSlide = () => {
+        if (slideTrackRef.current) {
+            const track = slideTrackRef.current;
+            // Calculate actual width of a single slide item including its horizontal padding
+            const slideItem = track.children[0];
+            const slideWidth = slideItem ? slideItem.offsetWidth : 0;
+            const scrollAmount = slideWidth; // Scroll by the width of one card
+
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+
+            setCurrentSlide((prev) => (prev - 1 + displaySpeakers.length) % displaySpeakers.length);
+        }
+    };
+
+    // Autoplay functionality
+    useEffect(() => {
+        const autoplayInterval = setInterval(() => {
+            nextSlide();
+        }, 3000); // Autoplay every 3 seconds
+
+        return () => clearInterval(autoplayInterval); // Clear interval on component unmount
+    }, [displaySpeakers.length, slidesToShow]); // Added slidesToShow as dependency for autoplay logic
+
+
+    return (
+        <section className="py-12 sm:py-20 bg-gray-100 text-gray-900 font-inter relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Top Section: Tagline, Title, and Navigation Arrows */}
+                <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+                    {/* Tagline and Title */}
+                    <div className="text-center md:text-left mb-6 md:mb-0">
+                        <p className="text-sm font-semibold text-brand-accent uppercase tracking-wider mb-2">
+                            Event Organizers
+                        </p>
+                        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                            {title || "Meet Our Speakers"}
+                        </h1>
+                    </div>
+
+                    {/* Custom Navigation Arrows */}
+                    <div className="flex space-x-4 hidden">
+                        <button
+                            className="p-3 bg-brand-accent hover:bg-brand-accent/80 rounded-full shadow-md transition-colors duration-300"
+                            onClick={prevSlide}
+                            aria-label="Previous Speaker"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                        </button>
+                        <button
+                            className="p-3 bg-brand-accent hover:bg-brand-accent/80 rounded-full shadow-md transition-colors duration-300"
+                            onClick={nextSlide}
+                            aria-label="Next Speaker"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-              ))}
-            </Slider>
-          </div>
-        ) : (
-          <p className="text-center text-text-subtle">
-            No organisers to display.
-          </p>
-        )}
-      </div>
-    </section>
-  );
+
+                {displaySpeakers.length > 0 ? (
+                    <div className="relative mx-auto max-w-6xl ">
+                        {/* Custom scrollable container for the carousel */}
+                        <div
+                            ref={slideTrackRef}
+                            className="flex overflow-x-scroll justify-center snap-x snap-mandatory scroll-smooth" // Changed to overflow-x-scroll
+                            style={{ WebkitOverflowScrolling: 'touch', msOverflowStyle: 'none', scrollbarWidth: 'none' }} // Cross-browser scrollbar hiding
+                        >
+                            {displaySpeakers.map((organisers) => (
+                                <div
+                                    key={organisers.id}
+                                    className="flex-shrink-0 snap-start px-3" // Changed snap-center to snap-start
+                                    style={{ width: `${100 / slidesToShow}%` }} // Dynamic width for responsive slides
+                                >
+                                    <Card
+                                        imageUrl={organisers.imageUrl}
+                                        title={organisers.name}
+                                        description={organisers.role}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    <p className="text-center text-gray-500">No speakers to display.</p>
+                )}
+            </div>
+        </section>
+    );
 };
 
 export default OrganisersSection;

@@ -28,7 +28,7 @@ const Navbar = () => {
         { label: 'Home', href: '/' }, // Removed icon property
         { label: 'About', href: '/about' }, // Removed icon property
         {
-            label: 'Past Events',
+            label: 'Events',
             type: 'dropdown', // Special type for dropdown
             subItems: allPastEvents,
         },

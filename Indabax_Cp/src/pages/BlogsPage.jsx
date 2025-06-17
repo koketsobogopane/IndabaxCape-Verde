@@ -1,12 +1,12 @@
-import React from 'react';
-import BlogsPageTemplate from '../components/templates/BlogsPageTemplate';
+import React from 'react'
+import BlogsPageTemplate from '../components/templates/BlogsPageTemplate'
 
 function BlogsPage() {
   return (
     <>
-      <BlogsPageTemplate />
+        <BlogsPageTemplate />
     </>
-  );
+  )
 }
 
-export default BlogsPage;
+export default BlogsPage
